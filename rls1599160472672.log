@@ -1,0 +1,70 @@
+thread 'request-worker-3' panicked at 'byte index 74 is not a char boundary; it is inside 'ç' (bytes 73..75) of `fn main() {
+    println!("     ");
+    let name: str = "     ";
+    printç!("              ", name);
+}
+`', /cargo/registry/src/github.com-1ecc6299db9ec823/racer-2.1.37/src/racer/core.rs:1114:17
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+thread 'request-worker-3' panicked at 'byte index 74 is not a char boundary; it is inside 'ç' (bytes 73..75) of `fn main() {
+    println!("     ");
+    let name: str = "     ";
+    printçm!("              ", name);
+}
+`', /cargo/registry/src/github.com-1ecc6299db9ec823/racer-2.1.37/src/racer/util.rs:402:5
+error: expected one of `:`, `@`, or `|`, found `)`
+ --> <stdin>:6:26
+  |
+6 |     fn get_name<str>(name) {
+  |                          ^ expected one of `:`, `@`, or `|`
+  |
+  = note: anonymous parameters are removed in the 2018 edition (see RFC 1685)
+help: if this is a `self` type, give it a parameter name
+  |
+6 |     fn get_name<str>(self: name) {
+  |                      ^^^^^^^^^^
+help: if this is a parameter name, give it a type
+  |
+6 |     fn get_name<str>(name: TypeName) {
+  |                      ^^^^^^^^^^^^^^
+help: if this is a type, explicitly ignore the parameter name
+  |
+6 |     fn get_name<str>(_: name) {
+  |                      ^^^^^^^
+
+error: expected one of `:`, `@`, or `|`, found `)`
+ --> <stdin>:1:35
+  |
+1 | impl Dummy { fn get_name<str>(name) { unimplemented!() } }
+  |                                   ^ expected one of `:`, `@`, or `|`
+  |
+  = note: anonymous parameters are removed in the 2018 edition (see RFC 1685)
+help: if this is a `self` type, give it a parameter name
+  |
+1 | impl Dummy { fn get_name<str>(self: name) { unimplemented!() } }
+  |                               ^^^^^^^^^^
+help: if this is a parameter name, give it a type
+  |
+1 | impl Dummy { fn get_name<str>(name: TypeName) { unimplemented!() } }
+  |                               ^^^^^^^^^^^^^^
+help: if this is a type, explicitly ignore the parameter name
+  |
+1 | impl Dummy { fn get_name<str>(_: name) { unimplemented!() } }
+  |                               ^^^^^^^
+
+[2020-09-03T19:32:09Z ERROR rls::actions::hover] format_method: error: Failed, input: "impl Dummy { fn get_name<str>(name) { unimplemented!() } }"
+error: expected one of `#`, `>`, `const`, identifier, or lifetime, found `&`
+ --> <stdin>:6:17
+  |
+6 |     fn get_name<&str>(name) {
+  |                 ^ expected one of `#`, `>`, `const`, identifier, or lifetime
+
+thread 'request-worker-3' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-671.0.0/diagnostic_builder.rs:429:13
+thread 'request-worker-0' panicked at 'byte index 18446744073709551615 is out of bounds of `:v`', /cargo/registry/src/github.com-1ecc6299db9ec823/racer-2.1.37/src/racer/scopes.rs:240:37
+thread 'request-worker-1' panicked at 'byte index 18446744073709551615 is out of bounds of `:voi`', /cargo/registry/src/github.com-1ecc6299db9ec823/racer-2.1.37/src/racer/scopes.rs:240:37
+thread 'request-worker-1' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-671.0.0/diagnostic_builder.rs:429:13
+thread 'request-worker-2' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-671.0.0/diagnostic_builder.rs:429:13
+thread 'request-worker-3' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-671.0.0/diagnostic_builder.rs:429:13
+thread 'request-worker-2' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-671.0.0/diagnostic_builder.rs:429:13
+thread 'request-worker-3' panicked at 'explicit panic', /cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-rustc_errors-671.0.0/diagnostic_builder.rs:429:13
+thread 'request-worker-1' panicked at 'Failed load file "": Custom { kind: Other, error: Io(Some(""), Some("Could not open file: ")) }', /cargo/registry/src/github.com-1ecc6299db9ec823/racer-2.1.37/src/racer/core.rs:816:14
+thread 'request-worker-2' panicked at 'Failed load file "": Custom { kind: Other, error: Io(Some(""), Some("Could not open file: ")) }', /cargo/registry/src/github.com-1ecc6299db9ec823/racer-2.1.37/src/racer/core.rs:816:14
